@@ -103,11 +103,11 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 	 */
 	private function getProductID()
 	{
-		$testmode = $this->params->get('testmode',0);
+		$testmode = $this->params->get('testmode');
 		if($testmode) {
-			return $this->params->get('testmode_pid','');
+			return $this->params->get('testmode_pid');
 		} else {
-			return $this->params->get('real_pid','');
+			return $this->params->get('livemode_pid');
 		}
 	}
 	
@@ -148,11 +148,11 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 	 */
 	private function getPayItemID()
 	{
-		$testmode = $this->params->get('testmode',0);
+		$testmode = $this->params->get('testmode');
 		if($testmode) {
-			return $this->params->get('testmode_payid','');
+			return $this->params->get('testmode_payid');
 		} else {
-			return $this->params->get('real_payid','');
+			return $this->params->get('livemode_payid');
 		}
 	}
 	
@@ -166,7 +166,7 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		if($testmode) {
 			return $this->params->get('testmode_mackey','');
 		} else {
-			return $this->params->get('real_mackey','');
+			return $this->params->get('livemode_mackey','');
 		}
 	}
 
