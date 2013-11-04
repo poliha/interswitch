@@ -99,8 +99,13 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		if($paymentmethod != $this->ppName) return false;
 		
 		
-		//query transaction on WebPay
-		
+		//prepare transaction query for WebPay
+		$webPayUrl = $this->getWebPayUrl();
+		$tx_query_str = "?transactionreference=" . $data->txn_ref;
+		$tx_query_str .= "&productid=". $data->product_id;
+		$tx_query_str .= "&amount=". $data->amount;
+		$tx_query_str .= "&hash=". $data->hash;
+	    $webPayUrl .=$tx_query_str;
 		
 	}
 	
