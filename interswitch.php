@@ -10,7 +10,7 @@ defined('_JEXEC') or die();
 $akpaymentinclude = include_once JPATH_ADMINISTRATOR.'/components/com_akeebasubs/assets/akpayment.php';
 if(!$akpaymentinclude) { unset($akpaymentinclude); return; } else { unset($akpaymentinclude); }
 
-class plgAkpaymentPaypal extends plgAkpaymentAbstract
+class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 {
 	public function __construct(&$subject, $config = array())
 	{
@@ -118,6 +118,7 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		curl_close($ch);
 		
 		$tx_output = json_decode(tx_query_resp, true);
+		print_r($tx_output);
 		
 	}
 	
