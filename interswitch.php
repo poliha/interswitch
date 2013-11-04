@@ -156,6 +156,19 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		}
 	}
 	
+	
+	/**
+	 * Gets the interswitch Mac Key (provided by interswitch)
+	 */
+	private function getMacKey()
+	{
+		$testmode = $this->params->get('testmode',0);
+		if($testmode) {
+			return $this->params->get('testmode_mackey','');
+		} else {
+			return $this->params->get('real_mackey','');
+		}
+	}
 
 	/**
 	 * Validates the incoming data against PayPal's IPN to make sure this is not a
