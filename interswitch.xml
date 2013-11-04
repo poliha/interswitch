@@ -41,7 +41,7 @@
 				<field name="cpp_headerback_color" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_HEADERBACK_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_HEADERBACK_DESC" />
 				<field name="cpp_headerborder_color" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_HEADERBORDER_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_HEADERBORDER_DESC" />
 			</fieldset>
-			<fieldset name="testmode_params">
+			<fieldset name="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_LABEL">
 				<field name="testmode_pid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PRODUCT_ID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PRODUCT_ID_DESC"/>
 				<field type="spacer" />
 				<field name="testmode_url" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_DESC"/>
@@ -49,7 +49,7 @@
 				<field name="testmode_payid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PAYID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PAYID_DESC" />
 				<field name="testmode_mackey" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_MAC_KEY_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_MAC_KEY_DESC" />
 			</fieldset>
-			<fieldset name="livemode_params">
+			<fieldset name="PLG_AKPAYMENT_INTERSWITCH_LIVEMODE_LABEL">
 				<field name="livemode_pid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PRODUCT_ID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PRODUCT_ID_DESC"/>
 				<field type="spacer" />
 				<field name="livemode_url" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL"/>
