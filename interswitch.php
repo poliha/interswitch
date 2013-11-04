@@ -90,11 +90,11 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 	 */
 	private function getPaymentURL()
 	{
-		$testmode = $this->params->get('testmode',0);
+		$testmode = $this->params->get('testmode');
 		if($testmode) {
-			return 'interswitch test url';
+			return $this->params->get('testmode_url');
 		} else {
-			return 'interswitch live';
+			return $this->params->get('livemode_url');
 		}
 	}
 
