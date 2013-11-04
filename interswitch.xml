@@ -44,9 +44,18 @@
 				<field type="spacer" />
 				<field name="testmode_url" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL"/>
 				<field type="spacer" />
+				<field name="testmode_payid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PAYID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PAYID_DESC" />
 				<field name="testmode_mackey" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_MAC_KEY_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_MAC_KEY_DESC" />
 			</fieldset>
-			
+			<fieldset name="livemode">
+				<field name="livemode_pid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PRODUCT_ID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PRODUCT_ID_DESC"/>
+				<field type="spacer" />
+				<field name="livemode_url" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL"/>
+				<field type="spacer" />
+				<field name="livemode_payid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PAYID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PAYID_DESC" />
+				<field type="spacer" />
+				<field name="livemode_mackey" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_MAC_KEY_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_MAC_KEY_DESC" />
+			</fieldset>
 		</fields>
 	</config>
 </extension>
