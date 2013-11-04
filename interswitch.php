@@ -133,12 +133,13 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 	/**
 	 * Gets the unique hash for the transaction
 	 */
-	private function getHash()
+	private function getHash($tx_ref, $site_redirect)
 	{
 		
-		 $vbv_amt = $amount * 100;
-        $hashstr = $ref . "3206" . "101" . $vbv_amt . $callback . $mackey;
-        $hash = hash("sha512", $hashstr);
+		 
+        $hashstr = $ref .$this->getProductID().$this->getPayItemID(). 
+					$subscription->net_amount.$site_redirect.$this->getMacKey();
+        return hash("sha512", $hashstr);
 	}
 	
 	
