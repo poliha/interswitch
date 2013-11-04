@@ -10,7 +10,7 @@
 	<version>1.0</version>
 	<description>PLG_AKPAYMENT_INTERSWITCH_DESCRIPTION</description>
 	<files>
-		<filename plugin="INTERSWITCH">interswitch.php</filename>
+		<filename plugin="interswitch">interswitch.php</filename>
 		<folder>interswitch</folder>
 	</files>
 	<languages folder="language">
