@@ -84,6 +84,25 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		return $html;
 	}
 
+
+
+
+	
+	/**
+	 * callback function
+	 */
+	public function onAKPaymentCallback($paymentmethod, $data)
+	{
+		JLoader::import('joomla.utilities.date');
+
+		// Check if we're supposed to handle this
+		if($paymentmethod != $this->ppName) return false;
+		
+		
+		//query transaction on WebPay
+		
+		
+	}
 	
 	/**
 	 * Gets the form action URL for the payment
