@@ -64,7 +64,7 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		$data = (object)array(
 			'payment_url' =>$this->getPaymentURL(),
 			'product_id' =>$this->getProductID(),
-			'amount' =>$subscription->net_amount,
+			'amount' =>$subscription->net_amount, //TO DO:check if net amount is the correct value
 			'currency' =>$this->getCurrency(),
 			'site_redirect_url' => $site_redirect,
 			'txn_ref' =>$tx_ref,
