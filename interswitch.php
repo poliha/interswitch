@@ -57,14 +57,18 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 			$rootURL = substr($rootURL, 0, -1 * strlen($subpathURL));
 		}
 		
+		$tx_ref = $this->getTxnRef();
+		$site_redirect = JURI::base().'index.php?option=com_akeebasubs&view=callback&paymentmethod=interswitch';
+		$tx_hash = $this->getHash($tx_ref, $site_redirect);
+		
 		$data = (object)array(
 			'payment_url' =>$this->getPaymentURL(),
 			'product_id' =>$this->getProductID(),
 			'amount' =>$subscription->net_amount,
 			'currency' =>$this->getCurrency(),
-			'site_redirect_url' =>JURI::base().'index.php?option=com_akeebasubs&view=callback&paymentmethod=interswitch',
-			'txn_ref' =>$this->getTxnRef(),
-			'hash' =>$this->getHash(),
+			'site_redirect_url' => $site_redirect,
+			'txn_ref' =>$tx_ref,
+			'hash' =>$tx_hash,
 			'pay_item_id' =>$this->getPayItemID(),
 			
 		
