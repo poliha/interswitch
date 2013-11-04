@@ -104,8 +104,20 @@ class plgAkpaymentPaypal extends plgAkpaymentAbstract
 		$tx_query_str = "?transactionreference=" . $data->txn_ref;
 		$tx_query_str .= "&productid=". $data->product_id;
 		$tx_query_str .= "&amount=". $data->amount;
-		$tx_query_str .= "&hash=". $data->hash;
+		//$tx_query_str .= "&hash=". $data->hash;
 	    $webPayUrl .=$tx_query_str;
+	    
+	    //query transaction on WebPay
+	    $ch = curl_init($webPayUrl);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_HEADER, true);
+
+		$tx_query_resp = curl_exec($ch);
+		curl_close($ch);
+		
+		$tx_output = json_decode(tx_query_resp, true);
 		
 	}
 	
