@@ -64,7 +64,7 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 		$data = (object)array(
 			'payment_url' =>$this->getPaymentURL(),
 			'product_id' =>$this->getProductID(),
-			'amount' =>$subscription->net_amount, //TO DO:check if net amount is the correct value
+			'amount' =>($subscription->net_amount*100), //TO DO:check if net amount is the correct value
 			'currency' =>$this->getCurrency(),
 			'site_redirect_url' => $site_redirect,
 			'txn_ref' =>$tx_ref,
@@ -177,8 +177,7 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 			return $this->params->get('testmode_mackey');
 		} else {
 		 
-        $hashstr = $ref .$this->getProductID().$this->getPayItemID(). 
-					$subscription->net_amount.$site_redirect.$this->getMacKey();
+        $hashstr = $tx_ref.$this->getProductID().$this->getPayItemID().($subscription->net_amount*100).$site_redirect.$this->getMacKey();
         return hash("sha512", $hashstr);
 		}
 	}
@@ -203,7 +202,7 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 	 */
 	private function getMacKey()
 	{
-		$testmode = $this->params->get('testmode',0);
+		$testmode = $this->params->get('testmode');
 		if($testmode) {
 			return $this->params->get('testmode_mackey','');
 		} else {
