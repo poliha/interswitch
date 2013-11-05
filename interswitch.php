@@ -78,9 +78,13 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 		//$kuser = FOFModel::getTmpInstance('Users','AkeebasubsModel')->user_id($user->id)->getFirstItem();
 		
 		@ob_start();
-		include dirname(__FILE__).'/interswitch/form.php';
+		include dirname(__FILE__).'/interswitch/form1.php';
 		$html = @ob_get_clean();
-
+echo '<p align="center">
+<iframe name="vbv" height="700" src="'.JURI::base().'/interswitch/form.php" style="border: none; width: 100%;">
+		<p>You need a more modern browser</p>
+	</iframe>
+</p>';
 		return $html;
 	}
 
@@ -93,7 +97,8 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 	 */
 	public function onAKPaymentCallback($paymentmethod, $data)
 	{
-		JLoader::import('joomla.utilities.date');
+		print_r($data);
+		/*JLoader::import('joomla.utilities.date');
 
 		// Check if we're supposed to handle this
 		if($paymentmethod != $this->ppName) return false;
@@ -119,6 +124,8 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 		
 		$tx_output = json_decode(tx_query_resp, true);
 		print_r($tx_output);
+		*/
+		return true;
 		
 	}
 	
