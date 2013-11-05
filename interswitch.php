@@ -210,7 +210,7 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 	/**
 	 * Gets the Interswitch WebPay URL
 	 */
-	private function getWebPayURL()
+	private function getWebPayUrl()
 	{
 		$testmode = $this->params->get('testmode');
 		if($testmode) {
