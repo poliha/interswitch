@@ -172,11 +172,15 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 	 */
 	private function getHash($tx_ref, $site_redirect)
 	{
-		
+		$testmode = $this->params->get('testmode');
+		if($testmode) {
+			return $this->params->get('testmode_mackey');
+		} else {
 		 
         $hashstr = $ref .$this->getProductID().$this->getPayItemID(). 
 					$subscription->net_amount.$site_redirect.$this->getMacKey();
         return hash("sha512", $hashstr);
+		}
 	}
 	
 	

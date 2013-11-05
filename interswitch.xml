@@ -58,7 +58,7 @@
 				<field type="spacer" />
 				<field name="livemode_url" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_URL_LABEL"/>
 				<field type="spacer" />
-				<field name="livemode_wpurl" type="text" size="" default="https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json" label="PLG_AKPAYMENT_INTERSWITCH_LIVEMODE_WPURL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_LIVEMODE_WPURL_DESC"/>
+				<field name="livemode_wpurl" type="text" size="" default="https://stageserv.interswitchng.com/test_paydirect/api/v1/gettransaction.json" label="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_WPURL_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_TESTMODE_WPURL_DESC"/>
 				<field type="spacer" />
 				
 				<field name="livemode_payid" type="text" size="50" default="" label="PLG_AKPAYMENT_INTERSWITCH_PAYID_LABEL" description="PLG_AKPAYMENT_INTERSWITCH_PAYID_DESC" />
