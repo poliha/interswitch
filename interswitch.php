@@ -206,5 +206,19 @@ class plgAkpaymentInterswitch extends plgAkpaymentAbstract
 			return $this->params->get('livemode_mackey','');
 		}
 	}
+	
+	/**
+	 * Gets the Interswitch WebPay URL
+	 */
+	private function getWebPayURL()
+	{
+		$testmode = $this->params->get('testmode');
+		if($testmode) {
+			return $this->params->get('testmode_wpurl');
+		} else {
+			return $this->params->get('livemode_wpurl');
+		}
+	}
+
 
 }
